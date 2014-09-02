@@ -25,6 +25,7 @@ git clone https://github.com/4thline/cling.git
 ````
 mvn clean install
 ````
+To skip tests add : -DskipTests
 
 * Use Cling in your pom.xml with:
 
