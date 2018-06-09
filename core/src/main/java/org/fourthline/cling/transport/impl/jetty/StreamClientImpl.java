@@ -137,7 +137,11 @@ public class StreamClientImpl extends AbstractStreamClient<StreamClientConfigura
 
     @Override
     protected void abort(HttpContentExchange exchange) {
-        exchange.cancel();
+		try {
+			exchange.cancel();
+        } catch (Exception ex) {
+            log.info("Error aborting HTTP client: " + ex);
+        }
     }
 
     @Override
